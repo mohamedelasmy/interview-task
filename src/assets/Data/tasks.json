@@ -1,0 +1,156 @@
+{
+  "body": {
+    "Status": "SUCCESS",
+    "ErrorCode": "000",
+    "ErrorDescription": "",
+    "Tasks": [
+      {
+        "NameData": {
+          "Name": "Main Data Ethiopia",
+          "Code": "TSK100"
+        },
+        "Status": "Running",
+        "CreationDate": "2023-03-15 13:23:23",
+        "SelectionCriteria": [
+          "Electricity Company of Ghana",
+          "Demo Region 1",
+          "Demo District 1"
+        ],
+        "Operations": [
+          "Load Meter Profile",
+          "Commission with tariff",
+          "Load Meter Profile",
+          "Commission with tariff",
+          "Load Meter Profile",
+          "Commission with tariff"
+        ],
+        "Chart": ["20", "50", "80"]
+      },
+      {
+        "NameData": {
+          "Name": "Read Data Cons",
+          "Code": "TSK101"
+        },
+        "Status": "Finished",
+        "CreationDate": "2023-03-15 13:23:23",
+        "SelectionCriteria": [
+          "Electricity Company of Ghana",
+          "Demo Region 1",
+          "Demo District 1"
+        ],
+        "Operations": ["Load Meter Profile", "Commission with tariff"],
+        "Chart": ["20", "50", "80"]
+      },
+      {
+        "NameData": {
+          "Name": "Cahnge Traffic Cons",
+          "Code": "TSK102"
+        },
+        "Status": "Queued",
+        "CreationDate": "2023-03-15 13:23:23",
+        "SelectionCriteria": ["Electricity Company of Ghana", "Demo Region 1"],
+        "Operations": ["Load Meter Profile", "Commission with tariff"],
+        "Chart": ["20", "50", "80"]
+      },
+      {
+        "NameData": {
+          "Name": "Cahnge Traffic",
+          "Code": "TSK103"
+        },
+        "Status": "New",
+        "CreationDate": "2023-03-15 13:23:23",
+        "SelectionCriteria": ["Electricity Company of Ghana", "Demo Region 1"],
+        "Operations": ["Load Meter Profile", "Commission with tariff"],
+        "Chart": ["20", "50", "80"]
+      },
+      {
+        "NameData": {
+          "Name": "Cahnge Traffic",
+          "Code": "TSK103"
+        },
+        "Status": "New",
+        "CreationDate": "2023-03-15 13:23:23",
+        "SelectionCriteria": [
+          "Electricity Company of Ghana",
+          "Demo Region 1",
+          "Demo District 1"
+        ],
+        "Operations": [
+          "Load Meter Profile",
+          "Commission with tariff",
+          "Load Meter Profile",
+          "Commission with tariff",
+          "Load Meter Profile",
+          "Commission with tariff"
+        ],
+        "Chart": ["20", "50", "80"]
+      },
+      {
+        "NameData": {
+          "Name": "Cahnge Traffic",
+          "Code": "TSK103"
+        },
+        "Status": "New",
+        "CreationDate": "2023-03-15 13:23:23",
+        "SelectionCriteria": [
+          "Electricity Company of Ghana",
+          "Demo Region 1",
+          "Demo District 1"
+        ],
+        "Operations": [
+          "Load Meter Profile",
+          "Commission with tariff",
+          "Load Meter Profile",
+          "Commission with tariff",
+          "Load Meter Profile",
+          "Commission with tariff"
+        ],
+        "Chart": ["20", "50", "80"]
+      },
+      {
+        "NameData": {
+          "Name": "Cahnge Traffic",
+          "Code": "TSK103"
+        },
+        "Status": "Running",
+        "CreationDate": "2023-03-15 13:23:23",
+        "SelectionCriteria": [
+          "Electricity Company of Ghana",
+          "Demo Region 1",
+          "Demo District 1"
+        ],
+        "Operations": [
+          "Load Meter Profile",
+          "Commission with tariff",
+          "Load Meter Profile",
+          "Commission with tariff",
+          "Load Meter Profile",
+          "Commission with tariff"
+        ],
+        "Chart": ["20", "50", "80"]
+      },
+      {
+        "NameData": {
+          "Name": "Cahnge Traffic",
+          "Code": "TSK103"
+        },
+        "Status": "Running",
+        "CreationDate": "2023-03-15 13:23:23",
+        "SelectionCriteria": [
+          "Electricity Company of Ghana",
+          "Demo Region 1",
+          "Demo District 1"
+        ],
+        "Operations": [
+          "Load Meter Profile",
+          "Commission with tariff",
+          "Load Meter Profile",
+          "Commission with tariff",
+          "Load Meter Profile",
+          "Commission with tariff"
+        ],
+        "Chart": ["20", "50", "80"]
+      }
+    ]
+  }
+}

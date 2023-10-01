@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root {
+  --warm-grey: #707070;
+  --dark-aqua-14: rgba(4, 106, 114, 0.14);
+  --pinkish-grey: #cbcbcb;
+  --turquoise-blue-1: rgba(0, 175, 216, 0.01);
+}
+
+body {
+  overflow-x: hidden;
+}

@@ -1,0 +1,266 @@
+<ul
+  class="flex flex-wrap -mb-px text-sm font-medium text-center"
+  id="myTab"
+  data-tabs-toggle="#myTabContent"
+  role="tablist"
+>
+  <li class="tab">
+    <button
+      href="#tasks"
+      class="text"
+      id="tasks-tab"
+      data-tabs-target="#tasks"
+      aria-controls="tasks"
+      aria-selected="false"
+    >
+      Task
+    </button>
+  </li>
+  <li class="tab">
+    <a
+      href="#schedules"
+      class="text"
+      id="schedules-tab"
+      data-tabs-target="#schedules"
+      aria-controls="schedules"
+      aria-selected="false"
+      >Schedules</a
+    >
+  </li>
+  <li class="tab">
+    <a
+      href="#failed-subtasks"
+      class="text"
+      data-tabs-target="#failed-subTasks"
+      role="tab"
+      aria-controls="failed-subTasks"
+      aria-selected="false"
+      >Failed SubTasks</a
+    >
+  </li>
+</ul>
+<div id="myTabContent">
+  <div class="" id="tasks" role="tabpanel" aria-labelledby="tasks-tab">
+    <table class="w-full">
+      <thead>
+        <tr>
+          <th colspan="2" class="hidden">Name</th>
+          <th colspan="2" class="hidden">Status</th>
+          <th colspan="2" class="hidden">Creation Date</th>
+          <th class="hidden">Selection Criteria</th>
+          <th class="hidden">Operations</th>
+          <th class="hidden">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="
+            let item of items
+              | paginate : { itemsPerPage: 5, currentPage: page }
+          "
+          class="border m-5 flex"
+        >
+        <!--- Name --->
+          <td class="text-center flex w-[17%] ">
+            <div
+              class="first-column-blue"
+              *ngIf="item.Status == 'Running'"
+            ></div>
+            <div
+              class="first-column-green"
+              *ngIf="item.Status == 'Finished'"
+            ></div>
+            <div
+              class="first-column-default"
+              *ngIf="item.Status != 'Running' && item.Status != 'Finished'"
+            ></div>
+            <div class="align-middle mt-auto mb-auto">
+              <div class="header">Name</div>
+              <div class="label">{{ item.NameData.Name }}</div>
+              <div class="header">#{{ item.NameData.Code }}</div>
+            </div>
+          </td>
+          <div class="line"></div>
+
+          <!--- Status --->
+          <td class="flex w-[14%]">
+            <div class="mb-auto mt-auto">
+              <img
+                *ngIf="item.Status == 'Finished'"
+                src="../../../../assets/icons/refresh icon (1).svg"
+                alt="Finished"
+                class="mr-1"
+              />
+              <img
+                *ngIf="item.Status == 'Running'"
+                src="../../../../assets/icons/refresh icon.svg"
+                alt="Running"
+                class="mr-1"
+              />
+              <svg
+                class="w-6 h-6 text-gray-800 dark:text-white mt-auto mb-auto mr-1"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 20 20"
+                *ngIf="item.Status == 'Queued'"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M10 6v4l3.276 3.276M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                />
+              </svg>
+              <img
+                *ngIf="item.Status == 'New'"
+                src="../../../../assets/icons/New task icon.svg"
+                alt="Running"
+                class="mr-1"
+              />
+            </div>
+            <div
+              class="align-middle mt-auto mb-auto font-[arial] font-bold text-[18px]"
+            >
+              <div class="header">Status</div>
+              <div
+                *ngIf="item.Status == 'Finished'"
+                class="text-[#12bb12] status flex"
+              >
+                {{ item.Status }}
+              </div>
+              <div
+                *ngIf="item.Status == 'Running'"
+                class="text-[#0090ff] status"
+              >
+                {{ item.Status }}
+              </div>
+              <div *ngIf="item.Status == 'Queued'" class="text-[#808080] status">
+                {{ item.Status }}
+              </div>
+              <div *ngIf="item.Status == 'New'" class="text-black-950 status">
+                {{ item.Status }}
+              </div>
+            </div>
+          </td>
+          <div class="line"></div>
+
+          <!-- Creation Date -->
+          <td class="flex w-[14%]">
+            <svg
+              class="w-6 h-6 text-gray-800 dark:text-white mr-2 mt-auto mb-auto"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fill="currentColor"
+                d="M6 1a1 1 0 0 0-2 0h2ZM4 4a1 1 0 0 0 2 0H4Zm7-3a1 1 0 1 0-2 0h2ZM9 4a1 1 0 1 0 2 0H9Zm7-3a1 1 0 1 0-2 0h2Zm-2 3a1 1 0 1 0 2 0h-2ZM1 6a1 1 0 0 0 0 2V6Zm18 2a1 1 0 1 0 0-2v2ZM5 11v-1H4v1h1Zm0 .01H4v1h1v-1Zm.01 0v1h1v-1h-1Zm0-.01h1v-1h-1v1ZM10 11v-1H9v1h1Zm0 .01H9v1h1v-1Zm.01 0v1h1v-1h-1Zm0-.01h1v-1h-1v1ZM10 15v-1H9v1h1Zm0 .01H9v1h1v-1Zm.01 0v1h1v-1h-1Zm0-.01h1v-1h-1v1ZM15 15v-1h-1v1h1Zm0 .01h-1v1h1v-1Zm.01 0v1h1v-1h-1Zm0-.01h1v-1h-1v1ZM15 11v-1h-1v1h1Zm0 .01h-1v1h1v-1Zm.01 0v1h1v-1h-1Zm0-.01h1v-1h-1v1ZM5 15v-1H4v1h1Zm0 .01H4v1h1v-1Zm.01 0v1h1v-1h-1Zm0-.01h1v-1h-1v1ZM2 4h16V2H2v2Zm16 0h2a2 2 0 0 0-2-2v2Zm0 0v14h2V4h-2Zm0 14v2a2 2 0 0 0 2-2h-2Zm0 0H2v2h16v-2ZM2 18H0a2 2 0 0 0 2 2v-2Zm0 0V4H0v14h2ZM2 4V2a2 2 0 0 0-2 2h2Zm2-3v3h2V1H4Zm5 0v3h2V1H9Zm5 0v3h2V1h-2ZM1 8h18V6H1v2Zm3 3v.01h2V11H4Zm1 1.01h.01v-2H5v2Zm1.01-1V11h-2v.01h2Zm-1-1.01H5v2h.01v-2ZM9 11v.01h2V11H9Zm1 1.01h.01v-2H10v2Zm1.01-1V11h-2v.01h2Zm-1-1.01H10v2h.01v-2ZM9 15v.01h2V15H9Zm1 1.01h.01v-2H10v2Zm1.01-1V15h-2v.01h2Zm-1-1.01H10v2h.01v-2ZM14 15v.01h2V15h-2Zm1 1.01h.01v-2H15v2Zm1.01-1V15h-2v.01h2Zm-1-1.01H15v2h.01v-2ZM14 11v.01h2V11h-2Zm1 1.01h.01v-2H15v2Zm1.01-1V11h-2v.01h2Zm-1-1.01H15v2h.01v-2ZM4 15v.01h2V15H4Zm1 1.01h.01v-2H5v2Zm1.01-1V15h-2v.01h2Zm-1-1.01H5v2h.01v-2Z"
+              />
+            </svg>
+            <div class="align-middle mt-auto mb-auto whitespace-pre-wrap">
+              <div class="header">Creation Date</div>
+              <div class="label">{{ item.CreationDate }}</div>
+            </div>
+          </td>
+          <div class="line"></div>
+
+          <!-- Selection Criteria -->
+          <td class="flex w-[15%]">
+            <div class="align-middle mt-auto mb-auto">
+              <div class="header">Selection Criteria</div>
+              <div
+                *ngFor="
+                  let criteria of item.SelectionCriteria | slice : 0 : show;
+                  let i = index
+                "
+              >
+                <div class="flex h-10">
+                  <div class="check-box"></div>
+                  <div class="label">{{ criteria }}</div>
+                </div>
+                <div
+                  class="view-more cursor-pointer pb-5"
+                  *ngIf="i == 4 && show == 5"
+                  (click)="show = item.SelectionCriteria.length"
+                >
+                  ...View More
+                </div>
+                <div
+                  class="view-more cursor-pointer pb-5"
+                  *ngIf="i > 4 && show > 5"
+                  (click)="item.SelectionCriteria.slice(0, 5); show = 5"
+                >
+                  ...View Less
+                </div>
+              </div>
+            </div>
+          </td>
+          <div class="line"></div>
+
+          <!-- Operations -->
+          <td class="flex w-[15%] ">
+            <div class="align-middle mt-auto mb-auto">
+              <div class="header">Operations</div>
+              <div
+                *ngFor="
+                  let operation of item.Operations | slice : 0 : show;
+                  let i = index
+                "
+              >
+                <div class="flex h-10">
+                  <div class="check-box"></div>
+                  <div class="label space-x-2">{{ operation }}</div>
+                </div>
+                <div
+                  class="view-more cursor-pointer pb-5"
+                  *ngIf="i == 4 && show == 5"
+                  (click)="show = item.Operations.length"
+                >
+                  ...View More
+                </div>
+                <div
+                  class="view-more cursor-pointer pb-5"
+                  *ngIf="i > 4 && show > 5"
+                  (click)="item.Operations.slice(0, 5); show = 5"
+                >
+                  ...View Less
+                </div>
+              </div>
+            </div>
+          </td>
+          <div class="line"></div>
+
+          <!-- Tsk -->
+          <td class="w-[14%] mr-5">
+            <div class="header">Tsk (210)</div>
+            <div class="h-auto w-auto" id="chart">
+              <apx-chart
+                [dataLabels]="item.chartOptions.dataLabels!"
+                [series]="item.chartOptions.series"
+                [chart]="item.chartOptions.chart"
+                [xaxis]="item.chartOptions.xaxis"
+                [yaxis]="item.chartOptions.yaxis"
+                [plotOptions]="item.chartOptions.plotOptions!"
+                [tooltip]="item.chartOptions.tooltip!"
+                [stroke]="item.chartOptions.stroke"
+                [fill]="item.chartOptions.fill!"
+                [legend]="item.chartOptions.legend!"
+                [colors]="item.chartOptions.colors!"
+              ></apx-chart>
+            </div>
+          </td>
+
+          <!-- Button -->
+          <td class="w-[10%] text-center mb-auto mt-auto">
+            <button type="button" class="text-white bg-[#b4b4b4] hover:bg-[#999999] focus:outline-none focus:ring-4 focus:ring-[#c8c8c8] font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Scheduled</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="text-center w-full">
+      <pagination-controls (pageChange)="page = $event"></pagination-controls>
+    </div>
+  </div>
+</div>

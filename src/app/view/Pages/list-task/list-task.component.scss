@@ -1,0 +1,153 @@
+/***tab***/
+
+.tab {
+  width: 264.6px;
+  height: 36px;
+  // margin: 0 200px 0.1px 180.3px;
+  padding: 7px 83.6px 9px 15px;
+  background-color: var(--pinkish-grey);
+}
+
+.tab-name {
+  width: 166px;
+  height: 20px;
+  font-family: Arial;
+  font-size: 18px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #fff;
+}
+
+.text {
+  width: 166px;
+  height: 20px;
+  font-family: Arial;
+  font-size: 18px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #fff !important;
+}
+
+.tab:hover {
+  background-color: #00afd8;
+}
+
+ul li:last-child:after {
+  right: -24 px;
+  content: "";
+  transform: skew(30deg);
+}
+
+/***Header***/
+
+.header {
+  width: auto;
+  height: 14px;
+  margin: 0 49px 1px 0;
+  font-family: Arial;
+  font-size: 12px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #aaa;
+}
+
+.label {
+  width: auto;
+  height: 17px;
+  margin: 1px 0 2px;
+  font-family: Arial;
+  font-size: 16px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #070707;
+}
+
+.first-column-blue{
+  width: 19px;
+  height: auto;
+  margin: 0 9px 0 0;
+  background-color: #0090ff;
+}
+
+.first-column-green{
+  width: 19px;
+  height: auto;
+  margin: 0 9px 0 0;
+  background-color: #12bb12;
+}
+
+.first-column-default{
+  width: 19px;
+  height: auto;
+  margin: 0 9px 0 0;
+  background-color: #00afd8;
+}
+
+.line {
+  width: 1px;
+  height: auto;
+  margin: 15px 13.5px 16px 6.5px;
+  background-color: var(--warm-grey);
+}
+
+.status {
+  width: 91px;
+  height: 20px;
+  // margin: 1px 0 0 7px;
+  font-family: Arial;
+  font-size: 18px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+}
+
+.check-box {
+  width: 12px;
+  height: 12px;
+  margin: 4px 5px 2px 0;
+  background-color: #c5c5c5;
+}
+
+.view-more {
+  width: 62px;
+  height: 11px;
+  margin: 2px 129px 0 0;
+  font-family: Arial;
+  font-size: 10px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #aaa;
+}
+
+.button {
+  width: auto;
+  height: 21px;
+  // margin: 8px 15.8px 3.5px 0;
+  // padding: 5px 12px 5px 10px;
+  text-align: center;
+  border-radius: 10.5px;
+  background-color: #b4b4b4;
+}
